@@ -18,10 +18,10 @@ function myFunction2(){
 		x.style.display = "table-row";
 	}
 	a.style.display = "none";*/
-	var newRow = tab.insertRow(1);
+	var newRow = tab.insertRow(tab.rows.length);
 	var cel1 = newRow.insertCell(0);
 	var cel2 = newRow.insertCell(1);
-	var cel2 = newRow.insertCell(2);
+	var cel3 = newRow.insertCell(2);
 
 	cel1.innerHTML = y;
 	cel2.innerHTML = z;
