@@ -21,14 +21,10 @@ function myFunction2(){
 	a.style.display = "none";
 	var butt = document.createElement('input'); // create a button
     butt.setAttribute('type','button'); // set attributes ...
+    butt.setAttribute('class','btn btn-default');
     butt.setAttribute('name','delete');
     butt.setAttribute('value','delete');
     butt.setAttribute('onclick','removeRow(this);')
-    
-    function removeRow(oButton) {
-        var empTab = document.getElementById('tab');
-        emptab.deleteRow(oButton.parentNode.parentNode.rowIndex);       // BUTTON -> TD -> TR.
-    }
 
 
 	var newRow = tab.insertRow(tab.rows.length);
@@ -41,7 +37,7 @@ function myFunction2(){
 	cel2.innerHTML = z;
 	newRow.cells[2].appendChild(butt);
 }
-/*document.getElementById("submit").addEventListener("click", function(event){
-    event.preventDefault();
-   handleFireButton();
-});*/
+function removeRow(oButton) {
+        var empTab = document.getElementById('tab');
+        empTab.deleteRow(oButton.parentNode.parentNode.rowIndex);   
+    }
