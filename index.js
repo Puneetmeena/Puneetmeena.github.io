@@ -9,24 +9,37 @@ function myFunction() {
 function myFunction2(){
 	var y = document.getElementById("name").value;
 	var z = document.getElementById("phone").value;
-    /*var x = document.getElementById("data");
-    var a = document.getElementById("form1");*/
+    var x = document.getElementById("data");
+    var a = document.getElementById("form1");
     var tab = document.getElementById("tab");
+    
 	/*document.getElementById("demo").innerHTML = y;
-	document.getElementById("task").innerHTML = z;
+	document.getElementById("task").innerHTML = z;*/
 	if (y!= "" || z!= "") {
 		x.style.display = "table-row";
 	}
-	a.style.display = "none";*/
+	a.style.display = "none";
+	var butt = document.createElement('input'); // create a button
+    butt.setAttribute('type','button'); // set attributes ...
+    butt.setAttribute('name','delete');
+    butt.setAttribute('value','delete');
+    butt.setAttribute('onclick','removeRow(this);')
+    
+    function removeRow(oButton) {
+        var empTab = document.getElementById('tab');
+        emptab.deleteRow(oButton.parentNode.parentNode.rowIndex);       // BUTTON -> TD -> TR.
+    }
+
+
 	var newRow = tab.insertRow(tab.rows.length);
+	
 	var cel1 = newRow.insertCell(0);
 	var cel2 = newRow.insertCell(1);
 	var cel3 = newRow.insertCell(2);
 
 	cel1.innerHTML = y;
 	cel2.innerHTML = z;
-	cel3.innerHTML = 'delete';
-
+	newRow.cells[2].appendChild(butt);
 }
 /*document.getElementById("submit").addEventListener("click", function(event){
     event.preventDefault();
